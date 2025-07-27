@@ -11,5 +11,6 @@ namespace Dressrosa.Data
         Task<User> Login(TokenRequest tokenRequest);
         Task<User> GetUserByEmailAsync(string emailAddress);
         Task<User> AddUserAsync(User user);
+        Task<User?> GetUserByIdAsync(string userId);
     }
 }

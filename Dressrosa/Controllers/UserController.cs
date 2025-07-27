@@ -64,11 +64,11 @@ namespace Safemax.API.Controllers
         {
             try
             {
-                var userId = Request.GetUserId(); // Extract UserId from token
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return Unauthorized("Invalid token. Please provide a valid token.");
-                }
+                //var userId = Request.GetUserId(); // Extract UserId from token
+                //if (string.IsNullOrEmpty(userId))
+                //{
+                //    return Unauthorized("Invalid token. Please provide a valid token.");
+                //}
                 ResponseDto<UserDto> response = new()
                 {
                     Data = await _userService.AddUserAsync(userDto)
@@ -86,6 +86,33 @@ namespace Safemax.API.Controllers
                 return StatusCode(500, $"An error occurred while processing your request");
             }
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByIdAsync([FromRoute] string id)
+        {
+            try
+            {
+                var userId = Request.GetUserId(); // Extract UserId from token
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Unauthorized("Invalid token. Please provide a valid token.");
+                }
+                ResponseDto<UserDto> response = new()
+                {
+                    Data = await _userService.GetUserByIdAsync(id, HttpContext)
+                };
+                return StatusCode((int)HttpStatusCode.OK, response);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                _logger.LogWarning("Unauthorized access: " + ex.Message);
+                return Unauthorized("Unauthorized access.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while getting User information");
+                return StatusCode(500, $"An error occurred while processing your request: {ex.Message}");
+            }
 
+        }
     }
 }

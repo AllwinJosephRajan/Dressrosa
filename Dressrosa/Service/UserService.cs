@@ -29,6 +29,7 @@ namespace Dressrosa.Service
         {
             _userRepository = userRepository;
             _tokenConverter = tokenConverter;
+            _userConverter = userConverter;
             _appSettings = appsettings.Value;
             _hasher = hasher;
         }
@@ -246,6 +247,43 @@ namespace Dressrosa.Service
             {
                 throw ex;
             }
+        }
+        public async Task<UserDto> GetUserByIdAsync(string userId, HttpContext httpContext)
+        {
+            try
+            {
+                // Retrieve timezone from the request
+                string timeZoneId = httpContext.Request.Headers["TimeZone"];
+                TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+
+                var users = await _userRepository.GetUserByIdAsync(userId);
+
+
+                if (users == null)
+                {
+                    return null;
+                }
+
+                var userDto = _userConverter.Convert(users);
+                userDto.UpdateOn = ConvertToTimeZone(users.UpdateOn, timeZone);
+                userDto.UpdateOn = ConvertToTimeZone(users.UpdateOn, timeZone);
+                return userDto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while processing user data.", ex);
+            }
+
+        }
+        private static DateTime? ConvertToTimeZone(DateTime? dateTime, TimeZoneInfo targetTimeZone)
+        {
+            if (!dateTime.HasValue) return null;
+
+            // Assume database time is in UTC, if not, first convert it to UTC
+            DateTime utcTime = DateTime.SpecifyKind(dateTime.Value, DateTimeKind.Utc);
+
+            // Convert to the target time zone
+            return TimeZoneInfo.ConvertTimeFromUtc(utcTime, targetTimeZone);
         }
     }
 }

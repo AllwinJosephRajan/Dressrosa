@@ -164,8 +164,8 @@ WHERE u.UserName = @UserName
         public async Task<User> AddUserAsync(User user)
         {
             const string userInsertQuery = @"
-            INSERT INTO users (Id, FirstName, LastName, UserName, EmailAddress, Password, PhoneNumber, TenantId,CreatedOn, DeleteBit)
-            VALUES (@Id, @FirstName, @LastName, @UserName, @EmailAddress, @Password, @PhoneNumber, @TenantId,@CreatedOn, @DeleteBit);";
+            INSERT INTO users (Id, FirstName, LastName, UserName, EmailAddress, Password, PhoneNumber,CreatedOn, DeleteBit)
+            VALUES (@Id, @FirstName, @LastName, @UserName, @EmailAddress, @Password, @PhoneNumber,@CreatedOn, @DeleteBit);";
 
             // SQL query for inserting into the userrolemapping table
             const string roleMappingInsertQuery = @"
@@ -189,7 +189,6 @@ WHERE u.UserName = @UserName
                     userParameters.Add("@EmailAddress", user.EmailAddress);
                     userParameters.Add("@Password", user.Password);
                     userParameters.Add("@PhoneNumber", user.PhoneNumber);
-                    userParameters.Add("@TenantId", user.TenantId);
                     userParameters.Add("@CreatedOn", user.CreatedOn);
                     userParameters.Add("@DeleteBit", user.DeleteBit);
 
@@ -217,6 +216,58 @@ WHERE u.UserName = @UserName
             catch (Exception ex)
             {
                 throw;
+            }
+        }
+        public async Task<User?> GetUserByIdAsync(string userId)
+        {
+            try
+            {
+                const string sql = @"
+            SELECT 
+                u.Id,
+                u.FirstName,
+                u.LastName,
+                u.UserName,
+                u.EmailAddress,
+                u.Password,
+                u.PhoneNumber,
+                u.CreatedOn,
+                u.UpdateOn,
+                u.CreatedBy,
+                u.DeleteBit,
+                rm.Id AS RoleMappingId,
+                rm.UserId,
+                rm.RoleId
+            FROM users u
+            LEFT JOIN user_rolemapping rm ON u.Id = rm.UserId
+            WHERE u.Id = @UserId AND u.DeleteBit = 0";
+
+                var result = await _dBManager.Connection.QueryAsync<User, UserRoleMappingDto, User>(
+                    sql,
+                    (user, roleMapping) =>
+                    {
+                        user.UserRoleMapping ??= new List<UserRoleMappingDto>();
+                        if (roleMapping != null)
+                        {
+                            user.UserRoleMapping.Add(roleMapping);
+                        }
+                        return user;
+                    },
+                    new { UserId = userId },
+                    splitOn: "RoleMappingId"
+                );
+
+                var user = result.FirstOrDefault();
+                if (user != null)
+                {
+                    user.UserRoleMapping ??= new List<UserRoleMappingDto>();
+                }
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while retrieving the user by ID.", ex);
             }
         }
     }

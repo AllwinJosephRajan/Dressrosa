@@ -26,7 +26,7 @@ namespace Dressrosa.Converter
                 UpdateOn = source.UpdateOn,
                 CreatedBy = source.CreatedBy,
                 DeleteBit = source.DeleteBit,
-                UserRoleMapping = source.UserRoleMapping
+                UserRoleMapping = source.UserRoleMapping ?? new List<UserRoleMappingDto>()
             };
         }
 
