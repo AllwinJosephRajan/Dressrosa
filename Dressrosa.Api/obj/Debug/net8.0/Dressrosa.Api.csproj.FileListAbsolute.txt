@@ -1,0 +1,8 @@
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.csproj.AssemblyReference.cache
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.AssemblyInfoInputs.cache
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.AssemblyInfo.cs
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.csproj.CoreCompileInputs.cache
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Films\Dressrosa\Dressrosa.Api\obj\Debug\net8.0\Dressrosa.Api.MvcApplicationPartsAssemblyInfo.cache
