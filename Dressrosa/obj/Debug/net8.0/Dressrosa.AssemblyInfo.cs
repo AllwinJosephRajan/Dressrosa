@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dressrosa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+106725eb1ae64d9aa555c2d40847f5cfca5ffe4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fbc38cb8a7afac77e881ca90982efebf4d9bca3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dressrosa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dressrosa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
