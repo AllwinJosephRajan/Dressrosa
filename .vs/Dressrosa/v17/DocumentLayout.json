@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|d:\\films\\dressrosa\\dressrosa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|solutionrelative:dressrosa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|d:\\films\\dressrosa\\dressrosa\\scripts\\001_user.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|solutionrelative:dressrosa\\scripts\\001_user.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|d:\\films\\dressrosa\\dressrosa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|solutionrelative:dressrosa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|d:\\films\\dressrosa\\dressrosa\\scripts\\001_user.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{37F47993-0E2B-46E8-9C9F-51811438B20A}|Dressrosa\\Dressrosa.csproj|solutionrelative:dressrosa\\scripts\\001_user.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +38,37 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "001_user.sql ",
+              "DocumentMoniker": "D:\\Films\\Dressrosa\\Dressrosa\\Scripts\\001_user.sql",
+              "RelativeDocumentMoniker": "Dressrosa\\Scripts\\001_user.sql",
+              "ToolTip": "D:\\Films\\Dressrosa\\Dressrosa\\Scripts\\001_user.sql",
+              "RelativeToolTip": "Dressrosa\\Scripts\\001_user.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-07T15:29:24.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Films\\Dressrosa\\Dressrosa\\Program.cs",
+              "RelativeDocumentMoniker": "Dressrosa\\Program.cs",
+              "ToolTip": "D:\\Films\\Dressrosa\\Dressrosa\\Program.cs",
+              "RelativeToolTip": "Dressrosa\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAADwvzUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T13:25:29.465Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Films\\Dressrosa\\Dressrosa\\appsettings.json",
               "RelativeDocumentMoniker": "Dressrosa\\appsettings.json",
               "ToolTip": "D:\\Films\\Dressrosa\\Dressrosa\\appsettings.json",
               "RelativeToolTip": "Dressrosa\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-08-06T18:41:51.524Z",
               "EditorCaption": ""
